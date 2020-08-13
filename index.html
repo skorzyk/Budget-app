@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Aplikacja budżetowa</h1>
+    </header>
+    <main class="budget">
+      <section class="budget__form">
+        <ul class="inputs">
+          <li class="switch">
+            <input
+              type="checkbox"
+              class="switch__input"
+              name="switch"
+              id="switch"
+              checked
+            />
+            <label for="switch" class="switch__label"></label>
+          </li>
+          <li class="input">
+            <input
+              type="text"
+              class="input__input"
+              name="description"
+              id="description"
+              placeholder="Opis"
+            />
+            <label for="description" class="input__label">Opis</label>
+          </li>
+          <li class="input">
+            <input
+              type="number"
+              class="input__input"
+              name="value"
+              id="value"
+              min="0"
+              placeholder="Wartość"
+            />
+            <label for="value" class="input__label">Wartość</label>
+          </li>
+          <li class="inputs__button">
+            <button class="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                class="button__icon"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+        <p class="error hide">
+          Błędne dane. Sprawdź czy podałeś opis oraz czy wartość jest większa
+          niż 0.
+        </p>
+      </section>
+      <section class="budget__bilans">
+        <h2 class="bilans__title">Twój budżet to:</h2>
+        <article class="bilans__list">
+          <section class="list">
+            <h3 class="list__title">Przychody:</h3>
+            <ul class="list__list" id="bilans-incomes"></ul>
+          </section>
+          <section class="list">
+            <h3 class="list__title">Wydatki:</h3>
+            <ul class="list__list" id="bilans-expenses"></ul>
+          </section>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
